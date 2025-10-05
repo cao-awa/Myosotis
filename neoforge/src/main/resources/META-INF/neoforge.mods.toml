@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "GNU GPL 3.0"
+
+[[mods]]
+modId = "myosotis"
+version = "${version}"
+displayName = "Myosotis"
+authors = ""
+description = '''
+
+'''
+#logoFile = ""
+
+[[dependencies.myosotis]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.myosotis]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.9,)"
+ordering = "NONE"
+side = "BOTH"
+
+
+[[mixins]]
+config = "myosotis.mixins.json"

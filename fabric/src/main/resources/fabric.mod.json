@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "myosotis",
+  "version": "${version}",
+  "name": "Myosotis",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/myosotis/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.cao.awa.myosotis.fabric.MyosotisFabric"
+    ],
+    "client": [
+      "com.github.cao.awa.myosotis.fabric.client.MyosotisFabricClient"
+    ]
+  },
+  "mixins": [
+    "myosotis.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.9",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

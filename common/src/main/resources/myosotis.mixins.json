@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.github.cao.awa.myosotis.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "server.player.ServerPlayerEntityMixin",
+    "server.world.ServerWorldMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
