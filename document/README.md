@@ -1,4 +1,4 @@
-# Feedback
+# Burial
 ## Falling
 Given a feather named 'If I could be like a chicken...', its eatable, given 5 nutrition and 0.6F saturation.
 
