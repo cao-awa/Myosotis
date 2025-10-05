@@ -3,11 +3,13 @@ package com.github.cao.awa.myosotis.mixin.server.player;
 import com.github.cao.awa.myosotis.death.data.PlayerDeathDataAccessor;
 import com.github.cao.awa.myosotis.server.MyosotisServer;
 import com.github.cao.awa.myosotis.util.data.PlayerDeathDataUtil;
-import com.google.gson.JsonElement;
+import com.github.cao.awa.myosotis.util.mob.DeathByMobUtil;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.c2s.common.SyncedClientOptions;
 import net.minecraft.server.MinecraftServer;
@@ -25,7 +27,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Pl
     private GameProfile profile;
 
     @Unique
-    private final JsonObject myosotis$deathData = PlayerDeathDataUtil.getPlayerDeathDataFromFile((ServerPlayerEntity) asLivingEntity()) ;
+    private final JsonObject myosotis$deathData = PlayerDeathDataUtil.getPlayerDeathDataFromFile((ServerPlayerEntity) asLivingEntity());
 
     public ServerPlayerEntityMixin(World world, GameProfile profile) {
         super(world, profile);
@@ -37,7 +39,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Pl
             at = @At("RETURN")
     )
     public void onInit(MinecraftServer server, ServerWorld world, GameProfile profile, SyncedClientOptions clientOptions, CallbackInfo ci) {
-         this.profile = profile;
+        this.profile = profile;
     }
 
     @Inject(
@@ -46,13 +48,24 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Pl
     )
     public void onDeath(DamageSource damageSource, CallbackInfo ci) {
         MyosotisServer.deaths.put(this.profile.name(), damageSource);
-        int deathCount = 1;
-        JsonElement deathCountElement = this.myosotis$deathData.get(damageSource.getName());
-        if (deathCountElement != null) {
-            deathCount = deathCountElement.getAsInt() + 1;
+        ServerPlayerEntity player = (ServerPlayerEntity) asLivingEntity();
+        if (damageSource.isOf(DamageTypes.MOB_ATTACK)) {
+            myosotis$mobAttackDeathCount(player, damageSource);
+        } else if (damageSource.isOf(DamageTypes.ARROW)) {
+            myosotis$mobAttackDeathCount(player, damageSource);
+        } else {
+            int deathCount = PlayerDeathDataUtil.getPlayerDeathCount(player, damageSource) + 1;
+            this.myosotis$deathData.add(damageSource.getName(), new JsonPrimitive(deathCount));
         }
-        this.myosotis$deathData.add(damageSource.getName(), new JsonPrimitive(deathCount));
-        PlayerDeathDataUtil.updatePayerDeathData((ServerPlayerEntity) asLivingEntity());
+        PlayerDeathDataUtil.updatePayerDeathData(player);
+    }
+
+    @Unique
+    public void myosotis$mobAttackDeathCount(ServerPlayerEntity player, DamageSource damageSource) {
+        if (damageSource.getAttacker() instanceof MobEntity mob) {
+            int deathCount = DeathByMobUtil.getDeathCount(player, damageSource, mob) + 1;
+            this.myosotis$deathData.add(DeathByMobUtil.getDeathCountName(damageSource, mob), new JsonPrimitive(deathCount));
+        }
     }
 
     @Override

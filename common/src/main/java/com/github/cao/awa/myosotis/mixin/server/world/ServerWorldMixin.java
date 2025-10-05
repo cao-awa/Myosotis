@@ -2,12 +2,17 @@ package com.github.cao.awa.myosotis.mixin.server.world;
 
 import com.github.cao.awa.myosotis.death.type.explosion.PlayerDeathByExplosion;
 import com.github.cao.awa.myosotis.death.type.fall.PlayerDeathByFalling;
+import com.github.cao.awa.myosotis.death.type.mob.skeleton.PlayerDeathBySkeleton;
+import com.github.cao.awa.myosotis.death.type.mob.zombie.PlayerDeathByZombie;
 import com.github.cao.awa.myosotis.server.MyosotisServer;
 import com.github.cao.awa.myosotis.server.world.session.ServerWorldSessionAccessor;
 import com.github.cao.awa.myosotis.util.data.PlayerDeathDataUtil;
+import com.github.cao.awa.myosotis.util.mob.DeathByMobUtil;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.mob.SkeletonEntity;
+import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -52,11 +57,23 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
             }
 
             if (damageSource.isOf(DamageTypes.PLAYER_EXPLOSION)) {
-                if (damageSource.getAttacker() instanceof CreeperEntity && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource)) {
+                if (damageSource.getAttacker() instanceof CreeperEntity creeper && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource, creeper)) {
                     PlayerDeathByExplosion.tryRespawnWithFirework(player);
                 }
             }
 
+            if (damageSource.isOf(DamageTypes.MOB_ATTACK)) {
+                if (damageSource.getAttacker() instanceof ZombieEntity zombie && DeathByMobUtil.isFirstDeathBy(player, damageSource, zombie)) {
+                    PlayerDeathByZombie.tryRespawnWithWoodenSword(player);
+                }
+            }
+
+            if (damageSource.isOf(DamageTypes.ARROW)) {
+                if (damageSource.getAttacker() instanceof SkeletonEntity skeleton && DeathByMobUtil.isFirstDeathBy(player, damageSource, skeleton)) {
+                    PlayerDeathBySkeleton.tryRespawnWithSecurity(player);
+                }
+            }
+            
             MyosotisServer.deaths.remove(player.getStringifiedName());
         }
     }

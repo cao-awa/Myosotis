@@ -6,6 +6,8 @@ import com.github.cao.awa.sinuatum.util.io.IOUtil;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.JsonHelper;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +28,14 @@ public class PlayerDeathDataUtil {
         }
     }
 
+    public static int getPlayerDeathCount(ServerPlayerEntity player, String deathKey) {
+        JsonElement deathCount = getPlayerDeathData(player).get(deathKey);
+        if (deathCount == null) {
+            return 0;
+        }
+        return deathCount.getAsInt();
+    }
+
     public static int getPlayerDeathCount(ServerPlayerEntity player, DamageSource damageSource) {
         JsonElement deathCount = getPlayerDeathData(player).get(damageSource.getName());
         if (deathCount == null) {
@@ -36,6 +46,23 @@ public class PlayerDeathDataUtil {
 
     public static boolean isFirstDeathBy(ServerPlayerEntity player, DamageSource damageSource) {
         return getPlayerDeathCount(player, damageSource) < 2;
+    }
+
+    public static int getPlayerDeathCount(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {
+        JsonElement deathCount;
+        if (mob instanceof ZombieEntity) {
+            deathCount = getPlayerDeathData(player).get(damageSource.getName() + "_zombie");
+        } else {
+            deathCount = getPlayerDeathData(player).get(damageSource.getName());
+        }
+        if (deathCount == null) {
+            return 0;
+        }
+        return deathCount.getAsInt();
+    }
+
+    public static boolean isFirstDeathBy(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {
+        return getPlayerDeathCount(player, damageSource, mob) < 2;
     }
 
     public static JsonObject getPlayerDeathDataFromFile(ServerPlayerEntity player) {

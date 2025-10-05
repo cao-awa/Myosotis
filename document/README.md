@@ -4,3 +4,9 @@ Given a feather named 'If I could be like a chicken...', its eatable, given 5 nu
 
 ## Creeper
 Given 3 firework rockets named 'Firework, also gunpowder, right?', has trail and twinkle, green creeper explosion shape.
+
+## Zombie
+Given a wooden sword named 'Do it!', max item damage up to 98, others data similar to the vanilla wooden sword.
+
+## Skeleton
+Given a shield named 'Security!', max item damage up to 441, others data similar to the vanilla shield.
