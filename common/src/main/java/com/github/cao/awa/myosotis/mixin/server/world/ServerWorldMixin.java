@@ -2,7 +2,9 @@ package com.github.cao.awa.myosotis.mixin.server.world;
 
 import com.github.cao.awa.myosotis.death.type.explosion.PlayerDeathByExplosion;
 import com.github.cao.awa.myosotis.death.type.fall.PlayerDeathByFalling;
+import com.github.cao.awa.myosotis.death.type.fly.PlayerDeathByFlyIntoWall;
 import com.github.cao.awa.myosotis.death.type.mob.skeleton.PlayerDeathBySkeleton;
+import com.github.cao.awa.myosotis.death.type.mob.wolf.PlayerDeathByWolf;
 import com.github.cao.awa.myosotis.death.type.mob.zombie.PlayerDeathByZombie;
 import com.github.cao.awa.myosotis.server.MyosotisServer;
 import com.github.cao.awa.myosotis.server.world.session.ServerWorldSessionAccessor;
@@ -13,6 +15,7 @@ import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -52,6 +55,10 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
     public void onPlayerRespawned(ServerPlayerEntity player, CallbackInfo ci) {
         DamageSource damageSource = MyosotisServer.deaths.get(player.getStringifiedName());
         if (damageSource != null) {
+            System.out.println(damageSource.getSource());
+            System.out.println(damageSource.getType());
+            System.out.println(damageSource.getAttacker());
+
             if (damageSource.isOf(DamageTypes.FALL) && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource)) {
                 PlayerDeathByFalling.tryRespawnWithFeather(player);
             }
@@ -66,6 +73,10 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
                 if (damageSource.getAttacker() instanceof ZombieEntity zombie && DeathByMobUtil.isFirstDeathBy(player, damageSource, zombie)) {
                     PlayerDeathByZombie.tryRespawnWithWoodenSword(player);
                 }
+
+                if (damageSource.getAttacker() instanceof WolfEntity wolf && DeathByMobUtil.isFirstDeathBy(player, damageSource, wolf)) {
+                    PlayerDeathByWolf.tryRespawnWithBones(player);
+                }
             }
 
             if (damageSource.isOf(DamageTypes.ARROW)) {
@@ -73,7 +84,11 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
                     PlayerDeathBySkeleton.tryRespawnWithSecurity(player);
                 }
             }
-            
+
+            if (damageSource.isOf(DamageTypes.FLY_INTO_WALL) && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource)) {
+                PlayerDeathByFlyIntoWall.tryRespawnWithRocket(player);
+            }
+
             MyosotisServer.deaths.remove(player.getStringifiedName());
         }
     }

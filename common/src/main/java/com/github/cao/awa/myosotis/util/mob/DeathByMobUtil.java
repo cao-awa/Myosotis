@@ -7,6 +7,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.Map;
@@ -15,6 +16,7 @@ public class DeathByMobUtil {
     private static final Map<Class<? extends MobEntity>, String> MOB_DEATH_COUNT_MAP = Manipulate.make(new Object2ObjectOpenHashMap<>(), map -> {
         map.put(ZombieEntity.class, "zombie");
         map.put(SkeletonEntity.class, "skeleton");
+        map.put(WolfEntity.class, "wolf");
     });
 
     public static int getDeathCount(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {

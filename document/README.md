@@ -10,3 +10,9 @@ Given a wooden sword named 'Do it!', max item damage up to 98, others data simil
 
 ## Skeleton
 Given a shield named 'Security!', max item damage up to 441, others data similar to the vanilla shield.
+
+## Wolf
+Given 5 bones named 'Its wolf, or dog?', no other data changes.
+
+## Elytra
+Given 3 rocket named 'Try again?', no other data changes.
