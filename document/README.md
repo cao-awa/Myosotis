@@ -16,3 +16,6 @@ Given 5 bones named 'Its wolf, or dog?', no other data changes.
 
 ## Elytra
 Given 3 rocket named 'Try again?', no other data changes.
+
+## Spider
+Given a string named 'A string, too bad it can't entangle the spider...', no other data changes.

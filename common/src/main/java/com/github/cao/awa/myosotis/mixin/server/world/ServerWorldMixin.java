@@ -14,6 +14,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
+import net.minecraft.entity.mob.SpiderEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.registry.RegistryKey;
@@ -75,6 +76,10 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
                 }
 
                 if (damageSource.getAttacker() instanceof WolfEntity wolf && DeathByMobUtil.isFirstDeathBy(player, damageSource, wolf)) {
+                    PlayerDeathByWolf.tryRespawnWithBones(player);
+                }
+
+                if (damageSource.getAttacker() instanceof SpiderEntity spider && DeathByMobUtil.isFirstDeathBy(player, damageSource, spider)) {
                     PlayerDeathByWolf.tryRespawnWithBones(player);
                 }
             }
