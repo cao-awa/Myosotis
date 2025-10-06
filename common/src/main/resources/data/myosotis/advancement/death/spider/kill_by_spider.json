@@ -1,0 +1,31 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "kill_by_spider": {
+      "trigger": "myosotis:kill_by_entity",
+      "conditions": {
+        "attacker": "minecraft:spider"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.kill_by_spider.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:string"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.kill_by_spider.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "kill_by_spider"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

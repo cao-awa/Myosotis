@@ -1,4 +1,4 @@
-package com.github.cao.awa.myosotis.advancement.criterion.death;
+package com.github.cao.awa.myosotis.advancement.criterion.death.kill;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

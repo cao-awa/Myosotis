@@ -10,5 +10,13 @@
   "myosotis.advancements.death.root.title": "出生入死",
   "myosotis.advancements.death.root.description": "汝何能屡次归来？盖天地本恒存之志，而汝为其心搏也。",
   "myosotis.advancements.adventure.kill_by_zombie.title": "何物？僵魃耶？！",
-  "myosotis.advancements.adventure.kill_by_zombie.description": "遭僵尸所戕非鲜见之事，仗汝剑御之！"
+  "myosotis.advancements.adventure.kill_by_zombie.description": "遭僵尸所戕非鲜见之事，仗汝剑御之！",
+  "myosotis.advancements.adventure.explosion_by_creeper.title": "爆裂乃天工！",
+  "myosotis.advancements.adventure.explosion_by_creeper.description": "火药可制爆烈之物，此乃真天工也！",
+  "myosotis.advancements.adventure.kill_by_wolf.title": "狼耶？犬耶？",
+  "myosotis.advancements.adventure.kill_by_wolf.description": "投骨可驯豺狼为友，今之为犬矣。",
+  "myosotis.advancements.adventure.kill_by_spider.title": "蛛，然巨甚矣",
+  "myosotis.advancements.adventure.kill_by_spider.description": "夫Minecraft中之巨蛛，诚为奇观也",
+  "myosotis.advancements.adventure.death_by_falling.title": "天者，极乎？……然否？",
+  "myosotis.advancements.adventure.death_by_falling.description": "遂助牛顿证其律"
 }

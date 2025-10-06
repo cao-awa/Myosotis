@@ -1,0 +1,31 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "explosion_by_creeper": {
+      "trigger": "myosotis:explosion_by_entity",
+      "conditions": {
+        "attacker": "minecraft:creeper"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.explosion_by_creeper.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:gunpowder"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.explosion_by_creeper.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "explosion_by_creeper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

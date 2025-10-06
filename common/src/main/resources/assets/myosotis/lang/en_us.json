@@ -8,7 +8,15 @@
   "myosotis.death.item.spider_string": "A string, too bad it can't entangle the spider...",
 
   "myosotis.advancements.death.root.title": "Brave untold danger",
-  "myosotis.advancements.death.root.description": "Why can you return again and again? Because this world itself is an immortal will, and you are it's beating heart.",
+  "myosotis.advancements.death.root.description": "Why can you return again and again? Because this world itself is an immortal will, and you are it's beating heart",
   "myosotis.advancements.adventure.kill_by_zombie.title": "What? Zombie?!",
-  "myosotis.advancements.adventure.kill_by_zombie.description": "Kill by zombie it's not a rare thing, just counterattack using your sword!"
+  "myosotis.advancements.adventure.kill_by_zombie.description": "Kill by zombie it's not a rare thing, just counterattack using your sword!",
+  "myosotis.advancements.adventure.explosion_by_creeper.title": "Explosions are art!",
+  "myosotis.advancements.adventure.explosion_by_creeper.description": "The gunpowder could make the TNT, this is true art!",
+  "myosotis.advancements.adventure.kill_by_wolf.title": "Wolf, or dog?",
+  "myosotis.advancements.adventure.kill_by_wolf.description": "The bones could make the wolf be your friend, its dog now",
+  "myosotis.advancements.adventure.kill_by_spider.title": "Spider, but too big",
+  "myosotis.advancements.adventure.kill_by_spider.description": "Really big spider in Minecraft, that awesome!",
+  "myosotis.advancements.adventure.death_by_falling.title": "The sky is the limit... right?",
+  "myosotis.advancements.adventure.death_by_falling.description": "Then you helped Newton verify his laws"
 }

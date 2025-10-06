@@ -13,3 +13,16 @@ Myosotis is minecraft mod for the latest minecraft version that makes your death
 Myosotis will give you one or more distinctive items when you respawning (only the first time as this type), it would be sarcastic, funny, useful or kidding.
 
 More details please see [Burial list](document/README.md).
+
+# Links
+## Source code
+[GitHub](https://github.com/cao-awa/Myosotis)
+
+[Issues tracker](https://github.com/cao-awa/Myosotis/issues)
+
+## Releases
+[GitHub](https://github.com/cao-awa/Myosotis/releases)
+
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/myosotis)
+
+[Modrinth](https://modrinth.com/mod/myosotis) (Under review now, not viewable)

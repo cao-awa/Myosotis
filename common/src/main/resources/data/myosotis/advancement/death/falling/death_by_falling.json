@@ -1,0 +1,30 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "death_by_falling": {
+      "trigger": "myosotis:death_by_falling",
+      "conditions": {
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.death_by_falling.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:elytra"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.death_by_falling.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "death_by_falling"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

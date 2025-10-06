@@ -1,0 +1,31 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "kill_by_wolf": {
+      "trigger": "myosotis:kill_by_entity",
+      "conditions": {
+        "attacker": "minecraft:wolf"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.kill_by_wolf.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:bone"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.kill_by_wolf.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "kill_by_wolf"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
