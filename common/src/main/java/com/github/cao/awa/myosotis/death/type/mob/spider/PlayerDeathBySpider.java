@@ -8,7 +8,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 public class PlayerDeathBySpider {
-    public static void tryRespawnWithBones(ServerPlayerEntity player) {
+    public static void tryRespawnWithString(ServerPlayerEntity player) {
         player.giveOrDropStack(
                 Manipulate.make(
                         new ItemStack(Items.STRING),

@@ -4,6 +4,7 @@ import com.github.cao.awa.myosotis.death.type.explosion.PlayerDeathByExplosion;
 import com.github.cao.awa.myosotis.death.type.fall.PlayerDeathByFalling;
 import com.github.cao.awa.myosotis.death.type.fly.PlayerDeathByFlyIntoWall;
 import com.github.cao.awa.myosotis.death.type.mob.skeleton.PlayerDeathBySkeleton;
+import com.github.cao.awa.myosotis.death.type.mob.spider.PlayerDeathBySpider;
 import com.github.cao.awa.myosotis.death.type.mob.wolf.PlayerDeathByWolf;
 import com.github.cao.awa.myosotis.death.type.mob.zombie.PlayerDeathByZombie;
 import com.github.cao.awa.myosotis.server.MyosotisServer;
@@ -56,10 +57,6 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
     public void onPlayerRespawned(ServerPlayerEntity player, CallbackInfo ci) {
         DamageSource damageSource = MyosotisServer.deaths.get(player.getStringifiedName());
         if (damageSource != null) {
-            System.out.println(damageSource.getSource());
-            System.out.println(damageSource.getType());
-            System.out.println(damageSource.getAttacker());
-
             if (damageSource.isOf(DamageTypes.FALL) && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource)) {
                 PlayerDeathByFalling.tryRespawnWithFeather(player);
             }
@@ -80,7 +77,7 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
                 }
 
                 if (damageSource.getAttacker() instanceof SpiderEntity spider && DeathByMobUtil.isFirstDeathBy(player, damageSource, spider)) {
-                    PlayerDeathByWolf.tryRespawnWithBones(player);
+                    PlayerDeathBySpider.tryRespawnWithString(player);
                 }
             }
 
