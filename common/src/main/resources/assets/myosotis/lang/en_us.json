@@ -5,5 +5,10 @@
   "myosotis.death.item.skeleton_shield": "Security!",
   "myosotis.death.item.wolf_bone": "Its wolf, or dog?",
   "myosotis.death.item.elytra_fly_into_wall": "Try again?",
-  "myosotis.death.item.spider_string": "A string, too bad it can't entangle the spider..."
+  "myosotis.death.item.spider_string": "A string, too bad it can't entangle the spider...",
+
+  "myosotis.advancements.death.root.title": "Brave untold danger",
+  "myosotis.advancements.death.root.description": "Why can you return again and again? Because this world itself is an immortal will, and you are it's beating heart.",
+  "myosotis.advancements.adventure.kill_by_zombie.title": "What? Zombie?!",
+  "myosotis.advancements.adventure.kill_by_zombie.description": "Kill by zombie it's not a rare thing, just counterattack using your sword!"
 }

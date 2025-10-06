@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "death_any": {
+      "trigger": "myosotis:death"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": {
+      "translate": "myosotis.advancements.death.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:totem_of_undying"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "myosotis.advancements.death.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "death_any"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,5 +1,6 @@
 package com.github.cao.awa.myosotis.mixin.server.player;
 
+import com.github.cao.awa.myosotis.advancement.criterion.crieria.MyosotisCriteria;
 import com.github.cao.awa.myosotis.death.data.PlayerDeathDataAccessor;
 import com.github.cao.awa.myosotis.server.MyosotisServer;
 import com.github.cao.awa.myosotis.util.data.PlayerDeathDataUtil;
@@ -58,6 +59,10 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Pl
             this.myosotis$deathData.add(damageSource.getName(), new JsonPrimitive(deathCount));
         }
         PlayerDeathDataUtil.updatePayerDeathData(player);
+        MyosotisCriteria.DEATH.trigger(player);
+        if (damageSource.isOf(DamageTypes.MOB_ATTACK)) {
+            MyosotisCriteria.KILL_BY_ENTITY.trigger(player, damageSource);
+        }
     }
 
     @Unique

@@ -1,0 +1,31 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "kill_by_zombie": {
+      "trigger": "myosotis:kill_by_entity",
+      "conditions": {
+        "attacker": "minecraft:zombie"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.kill_by_zombie.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:rotten_flesh"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.kill_by_zombie.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "kill_by_zombie"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

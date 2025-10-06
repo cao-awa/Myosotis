@@ -5,5 +5,10 @@
   "myosotis.death.item.skeleton_shield": "安全保障！",
   "myosotis.death.item.wolf_bone": "是狼？是狗！",
   "myosotis.death.item.elytra_fly_into_wall": "再来一次？",
-  "myosotis.death.item.spider_string": "一根线，可惜它不能缠住蜘蛛..."
+  "myosotis.death.item.spider_string": "一根线，可惜它不能缠住蜘蛛...",
+
+  "myosotis.advancements.death.root.title": "向死而生",
+  "myosotis.advancements.death.root.description": "你为何能一次次归来？因为这个世界本身，就是一个不灭的意志，而你是它跳动着的心。",
+  "myosotis.advancements.adventure.kill_by_zombie.title": "什么？僵尸？！",
+  "myosotis.advancements.adventure.kill_by_zombie.description": "被僵尸杀死不是一件罕见的事，用你的剑反击吧！"
 }
