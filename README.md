@@ -26,3 +26,6 @@ More details please see [Burial list](document/README.md).
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/myosotis)
 
 [Modrinth](https://modrinth.com/mod/myosotis) (Under review now, not viewable)
+
+## Special thanks
+Japanese was translated by '草二号机' as 'Mono on aware(物の哀れ)' styles from lzh('文言文') language.

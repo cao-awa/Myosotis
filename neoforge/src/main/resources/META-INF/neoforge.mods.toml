@@ -7,7 +7,7 @@ license = "GNU GPL 3.0"
 modId = "myosotis"
 version = "${version}"
 displayName = "Myosotis"
-authors = "cao_awa"
+authors = "cao_awa, 草二号机"
 description = "Myosotis is minecraft mod for the latest minecraft version that makes your death be more funny and less frustrating."
 #logoFile = ""
 

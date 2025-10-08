@@ -13,7 +13,7 @@ public class PlayerDeathBySkeleton {
                 Manipulate.make(
                         new ItemStack(Items.SHIELD),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.skeleton_shield"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.skeleton_shield"));
                             item.set(DataComponentTypes.MAX_DAMAGE, 441);
                         }
                 )

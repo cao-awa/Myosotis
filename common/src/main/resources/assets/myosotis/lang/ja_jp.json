@@ -1,0 +1,22 @@
+{
+  "myosotis.item.falls": "鶏のように生きられれば…散りゆく花の如く",
+  "myosotis.item.creeper": "花火、つまりは火薬か？儚き光の運命",
+  "myosotis.item.zombie_sword": "斬れ！朽ちゆく者よ",
+  "myosotis.item.skeleton_shield": "無常の砦",
+  "myosotis.item.wolf_bone": "狼か、犬か？月下に散る命",
+  "myosotis.item.elytra_fly_into_wall": "再び舞えるか？蝶の如く脆き翼",
+  "myosotis.item.spider_string": "蜘蛛を縛れぬ糸…徒しき絆",
+
+  "myosotis.advancements.death.root.title": "幽玄なる危険に挑む",
+  "myosotis.advancements.death.root.description": "なぜ君は繰り返し還るのか？この世界そのものが不滅の意志であり、君はその鼓動なり",
+  "myosotis.advancements.adventure.kill_by_zombie.title": "何せ？屍人？！",
+  "myosotis.advancements.adventure.kill_by_zombie.description": "腐れ行く者に斃れるは常の事、ただ刀を反せよ！",
+  "myosotis.advancements.adventure.explosion_by_creeper.title": "爆発は芸術の極み",
+  "myosotis.advancements.adventure.explosion_by_creeper.description": "火薬は爆裂を生み、これこそ真の芸術…散華の如く",
+  "myosotis.advancements.adventure.kill_by_wolf.title": "狼か、犬か？",
+  "myosotis.advancements.adventure.kill_by_wolf.description": "骨は狼を友とす、今は忠犬なり…もののあはれ",
+  "myosotis.advancements.adventure.kill_by_spider.title": "蜘蛛、然も巨大なり",
+  "myosotis.advancements.adventure.kill_by_spider.description": "夢現に跋扈する大蜘蛛、これこそ幽玄！",
+  "myosotis.advancements.adventure.death_by_falling.title": "天こそ限り…然りや？",
+  "myosotis.advancements.adventure.death_by_falling.description": "そして汝はニュートンの理を桜散る如く証せり"
+}

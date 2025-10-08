@@ -27,7 +27,7 @@ public class PlayerDeathByExplosion {
                                     true,
                                     true
                             );
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.creeper"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.creeper"));
                             item.set(DataComponentTypes.FIREWORKS, new FireworksComponent(1, List.of(explosionComponent)));
                             item.set(DataComponentTypes.FIREWORK_EXPLOSION, explosionComponent);
                         }

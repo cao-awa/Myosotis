@@ -16,7 +16,7 @@ public class PlayerDeathByZombie {
                 Manipulate.make(
                         new ItemStack(Items.WOODEN_SWORD),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.zombie_sword"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.zombie_sword"));
                             item.set(DataComponentTypes.MAX_DAMAGE, 98);
                         }
                 )

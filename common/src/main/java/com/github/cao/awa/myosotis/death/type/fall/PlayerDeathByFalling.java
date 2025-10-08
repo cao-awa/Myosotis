@@ -15,7 +15,7 @@ public class PlayerDeathByFalling {
                 Manipulate.make(
                         new ItemStack(Items.FEATHER),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.falls"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.falls"));
                             item.set(DataComponentTypes.FOOD, new FoodComponent.Builder().nutrition(5).saturationModifier(0.6F).alwaysEdible().build());
                             item.set(DataComponentTypes.CONSUMABLE, ConsumableComponents.FOOD);
                         }

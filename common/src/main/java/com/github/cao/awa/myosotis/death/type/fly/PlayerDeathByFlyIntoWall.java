@@ -13,7 +13,7 @@ public class PlayerDeathByFlyIntoWall {
                 Manipulate.make(
                         new ItemStack(Items.FIREWORK_ROCKET, 3),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.elytra_fly_into_wall"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.elytra_fly_into_wall"));
                         }
                 )
         );

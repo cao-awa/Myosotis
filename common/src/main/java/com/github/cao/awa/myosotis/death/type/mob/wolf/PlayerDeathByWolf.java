@@ -13,7 +13,7 @@ public class PlayerDeathByWolf {
                 Manipulate.make(
                         new ItemStack(Items.BONE, 5),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.wolf_bone"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.wolf_bone"));
                         }
                 )
         );

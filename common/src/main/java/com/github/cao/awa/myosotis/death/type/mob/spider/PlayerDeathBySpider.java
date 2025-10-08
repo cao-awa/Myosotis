@@ -13,7 +13,7 @@ public class PlayerDeathBySpider {
                 Manipulate.make(
                         new ItemStack(Items.STRING),
                         item -> {
-                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.death.item.spider_string"));
+                            item.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("myosotis.item.spider_string"));
                         }
                 )
         );
