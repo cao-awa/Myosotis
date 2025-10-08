@@ -1,6 +1,6 @@
 package com.github.cao.awa.myosotis.mixin.server.world;
 
-import com.github.cao.awa.myosotis.death.type.explosion.PlayerDeathByExplosion;
+import com.github.cao.awa.myosotis.death.type.explosion.PlayerDeathByCreeperExplosion;
 import com.github.cao.awa.myosotis.death.type.fall.PlayerDeathByFalling;
 import com.github.cao.awa.myosotis.death.type.fly.PlayerDeathByFlyIntoWall;
 import com.github.cao.awa.myosotis.death.type.mob.skeleton.PlayerDeathBySkeleton;
@@ -62,8 +62,8 @@ public class ServerWorldMixin implements ServerWorldSessionAccessor {
             }
 
             if (damageSource.isOf(DamageTypes.PLAYER_EXPLOSION)) {
-                if (damageSource.getAttacker() instanceof CreeperEntity creeper && PlayerDeathDataUtil.isFirstDeathBy(player, damageSource, creeper)) {
-                    PlayerDeathByExplosion.tryRespawnWithFirework(player);
+                if (damageSource.getAttacker() instanceof CreeperEntity creeper && DeathByMobUtil.isFirstDeathBy(player, damageSource, creeper)) {
+                    PlayerDeathByCreeperExplosion.tryRespawnWithFirework(player);
                 }
             }
 

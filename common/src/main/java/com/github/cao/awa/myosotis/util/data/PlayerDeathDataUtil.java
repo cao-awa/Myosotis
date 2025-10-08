@@ -48,23 +48,6 @@ public class PlayerDeathDataUtil {
         return getPlayerDeathCount(player, damageSource) < 2;
     }
 
-    public static int getPlayerDeathCount(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {
-        JsonElement deathCount;
-        if (mob instanceof ZombieEntity) {
-            deathCount = getPlayerDeathData(player).get(damageSource.getName() + "_zombie");
-        } else {
-            deathCount = getPlayerDeathData(player).get(damageSource.getName());
-        }
-        if (deathCount == null) {
-            return 0;
-        }
-        return deathCount.getAsInt();
-    }
-
-    public static boolean isFirstDeathBy(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {
-        return getPlayerDeathCount(player, damageSource, mob) < 2;
-    }
-
     public static JsonObject getPlayerDeathDataFromFile(ServerPlayerEntity player) {
         try {
             return JsonHelper.deserialize(new FileReader(getPlayerDeathDataFile(player)));

@@ -40,10 +40,12 @@ public class ExplosionByEntityCriterion extends AbstractCriterion<ExplosionByEnt
         return (new LootContext.Builder(lootWorldContext)).build(Optional.empty());
     }
 
-    public record Conditions(Optional<LootContextPredicate> player, Optional<EntityType<?>> attacker) implements AbstractCriterion.Conditions {
+    public record Conditions(Optional<LootContextPredicate> player, Optional<EntityType<?>> source,
+                             Optional<EntityType<?>> attacker) implements AbstractCriterion.Conditions {
         public static final Codec<Conditions> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 EntityPredicate.LOOT_CONTEXT_PREDICATE_CODEC.optionalFieldOf("player").forGetter(Conditions::player),
-                EntityType.CODEC.optionalFieldOf("attacker").forGetter(Conditions::attacker)
+                EntityType.CODEC.optionalFieldOf("source").forGetter(Conditions::source),
+                EntityType.CODEC.optionalFieldOf("causer").forGetter(Conditions::attacker)
         ).apply(instance, Conditions::new));
 
         public boolean test(LootContext context) {
@@ -51,14 +53,25 @@ public class ExplosionByEntityCriterion extends AbstractCriterion<ExplosionByEnt
                     entityType -> {
                         DamageSource damageSource = context.get(LootContextParameters.DAMAGE_SOURCE);
                         assert damageSource != null;
-                        if (!damageSource.isOf(DamageTypes.PLAYER_EXPLOSION)) {
+                        if (!damageSource.isOf(DamageTypes.PLAYER_EXPLOSION) && !damageSource.isOf(DamageTypes.EXPLOSION)) {
                             return false;
                         }
                         Entity attackerToPlayer = damageSource.getAttacker();
                         assert attackerToPlayer != null;
                         return entityType == attackerToPlayer.getType();
                     }
-            ).orElse(false);
+            ).orElse(this.source.map(
+                    entityType -> {
+                        DamageSource damageSource = context.get(LootContextParameters.DAMAGE_SOURCE);
+                        assert damageSource != null;
+                        if (!damageSource.isOf(DamageTypes.PLAYER_EXPLOSION) && !damageSource.isOf(DamageTypes.EXPLOSION)) {
+                            return false;
+                        }
+                        Entity attackerToPlayer = damageSource.getAttacker();
+                        assert attackerToPlayer != null;
+                        return entityType == attackerToPlayer.getType();
+                    }
+            ).orElse(false));
         }
 
         @Override

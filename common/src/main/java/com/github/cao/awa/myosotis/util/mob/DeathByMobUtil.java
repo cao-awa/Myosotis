@@ -4,10 +4,7 @@ import com.github.cao.awa.myosotis.util.data.PlayerDeathDataUtil;
 import com.github.cao.awa.sinuatum.manipulate.Manipulate;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.SkeletonEntity;
-import net.minecraft.entity.mob.SpiderEntity;
-import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -19,6 +16,7 @@ public class DeathByMobUtil {
         map.put(SkeletonEntity.class, "skeleton");
         map.put(WolfEntity.class, "wolf");
         map.put(SpiderEntity.class, "spider");
+        map.put(CreeperEntity.class, "creeper");
     });
 
     public static int getDeathCount(ServerPlayerEntity player, DamageSource damageSource, MobEntity mob) {

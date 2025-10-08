@@ -1,11 +1,11 @@
 # Myosotis
-> 初めての死を、春の風が吹く、目覚めの恵み、
+> 初めての死を、春霞が撫でる、夢の名残、
 > 
-> 死の闇を抜け、夏の蝉時雨、嘲笑の品、
+> 死の闇過ぎて、蝉しぐれ揺らぐ、消えゆくもの、
 > 
-> 最初の落ち葉、秋の実りにて、实用の品、
+> 最初の落葉、実りの裡に還る、露の音、
 > 
-> 死の眠りから、冬の雪解けて、忘れじの品、
+> 死の眠りから、雪間の草萌ゆ、忘れがたみ、
 
 Myosotis is minecraft mod for the latest minecraft version that makes your death be more funny and less frustrating.
 
@@ -28,4 +28,4 @@ More details please see [Burial list](document/README.md).
 [Modrinth](https://modrinth.com/mod/myosotis) (Under review now, not viewable)
 
 ## Special thanks
-Japanese was translated by '草二号机' as 'Mono on aware(物の哀れ)' styles from lzh('文言文') language.
+Japanese was translated by '草二号机' as 'Mono on aware(物の哀れ)' styles from lzh('文言文') language, the 'Haiku' style modern poetry on top of the README also is.
