@@ -1,0 +1,2 @@
+Add 1 advancement.
+Support for Japanese language.

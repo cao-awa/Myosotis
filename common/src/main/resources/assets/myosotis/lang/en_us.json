@@ -8,15 +8,17 @@
   "myosotis.item.spider_string": "A string, too bad it can't entangle the spider...",
 
   "myosotis.advancements.death.root.title": "Brave untold danger",
-  "myosotis.advancements.death.root.description": "Why respawn? Because the world itself is an immortal will—and you're its main character",
-  "myosotis.advancements.adventure.kill_by_zombie.title": "What? Zombie?! Again?",
+  "myosotis.advancements.death.root.description": "Why respawn? because the world itself is an immortal will—and you're its main character",
+  "myosotis.advancements.adventure.kill_by_zombie.title": "What? zombie?! again?",
   "myosotis.advancements.adventure.kill_by_zombie.description": "Getting mobbed by zombies—just parry this you casual",
   "myosotis.advancements.adventure.explosion_by_creeper.title": "Explosions are art",
   "myosotis.advancements.adventure.explosion_by_creeper.description": "Gunpowder, TNT, and everything nice—that's the recipe for bOOM",
-  "myosotis.advancements.adventure.kill_by_wolf.title": "Wolf or dog? Still a good boy",
+  "myosotis.advancements.adventure.kill_by_wolf.title": "Wolf or dog? still a good boy",
   "myosotis.advancements.adventure.kill_by_wolf.description": "Bones may tame wolves but they can still bite",
-  "myosotis.advancements.adventure.kill_by_spider.title": "Spider? Itsy Bitsy went hard on leg day",
+  "myosotis.advancements.adventure.kill_by_spider.title": "Spider? itsy bitsy went hard on leg day",
   "myosotis.advancements.adventure.kill_by_spider.description": "Arachnophobia mode activated—too bad it's still huge",
+  "myosotis.advancements.adventure.kill_by_skeleton.title": "Not today? unfortunately",
+  "myosotis.advancements.adventure.kill_by_skeleton.description": "If you had a shield...",
   "myosotis.advancements.adventure.death_by_falling.title": "The sky is the limit... right?",
   "myosotis.advancements.adventure.death_by_falling.description": "Gravity: 1, You: 0—Newton would be proud"
 }

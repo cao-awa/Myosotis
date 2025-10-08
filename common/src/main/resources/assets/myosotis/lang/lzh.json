@@ -5,7 +5,7 @@
   "myosotis.item.skeleton_shield": "安无虞！",
   "myosotis.item.wolf_bone": "为狼邪？为犬也！",
   "myosotis.item.elytra_fly_into_wall": "敢请复为乎？",
-  "myosotis.item.spider_string": "一丝兮，惜其难缚蛛……",
+  "myosotis.item.spider_string": "一丝兮，惜其难缚蛛...",
 
   "myosotis.advancements.death.root.title": "出生入死",
   "myosotis.advancements.death.root.description": "汝何能屡次归来？盖天地本恒存之志，而汝为其心搏也。",
@@ -17,6 +17,8 @@
   "myosotis.advancements.adventure.kill_by_wolf.description": "投骨可驯豺狼为友，今之为犬矣。",
   "myosotis.advancements.adventure.kill_by_spider.title": "蛛，然巨甚矣",
   "myosotis.advancements.adventure.kill_by_spider.description": "夫Minecraft中之巨蛛，诚为奇观也",
-  "myosotis.advancements.adventure.death_by_falling.title": "天者，极乎？……然否？",
+  "myosotis.advancements.adventure.kill_by_skeleton.title": "岂弗受此术乎？惜哉！",
+  "myosotis.advancements.adventure.kill_by_skeleton.description": "若尔持一盾...",
+  "myosotis.advancements.adventure.death_by_falling.title": "天者，极乎？...然否？",
   "myosotis.advancements.adventure.death_by_falling.description": "遂助牛顿证其律"
 }

@@ -63,6 +63,9 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Pl
         if (damageSource.isOf(DamageTypes.MOB_ATTACK)) {
             MyosotisCriteria.KILL_BY_ENTITY.trigger(player, damageSource);
         }
+        if (damageSource.isOf(DamageTypes.ARROW) && damageSource.getAttacker() instanceof MobEntity) {
+            MyosotisCriteria.KILL_BY_ENTITY.trigger(player, damageSource);
+        }
         if (damageSource.isOf(DamageTypes.PLAYER_EXPLOSION)) {
             MyosotisCriteria.EXPLOSION_BY_ENTITY.trigger(player, damageSource);
         }

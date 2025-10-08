@@ -1,0 +1,31 @@
+{
+  "parent": "myosotis:death/root",
+  "criteria": {
+    "kill_by_skeleton": {
+      "trigger": "myosotis:kill_by_entity",
+      "conditions": {
+        "attacker": "minecraft:skeleton"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "myosotis.advancements.adventure.kill_by_skeleton.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:arrow"
+    },
+    "title": {
+      "translate": "myosotis.advancements.adventure.kill_by_skeleton.title"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "kill_by_skeleton"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
